@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dapp playground</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Slot Machine</h1>
+  <div id="pot"></div>
+  Deposit:<input type="text" id="deposit"></input>
+  <button onClick="deposit()">Make Deposit</button>
+  <hr>
+  <h1>Awesome Coin</h1><br>
+  Receiver:<input type="text" id="receiver"></input>
+  Amount:<input type="text" id="amount"></input><br>
+  <button onClick="sendCoin()">Send Coin</button>
+  <br>
+  <button onClick="refreshBalances()">Update Balances</button>
+  <div id="balances"></div>
+  <button onClick="seizeCoins()">Sieze Coins</button>
+  <button onClick="mint()">Mint</button>
+</body>
+</html>
