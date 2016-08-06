@@ -13,7 +13,7 @@ function sendCoin(){
   var awesome = AwesomeCoin.deployed();
   var amount = parseInt(document.getElementById("amount").value);
   var _from = account;
-  var _to = document.getElementById("receiver").value;
+  var _to = document.getElementById("to").value;
 
   awesome.sendCoin(_from, _to, amount, {from: account}).then(function() {
     refreshBalances();
@@ -46,11 +46,15 @@ function refreshBalances(){
   var result = "";
 
   accounts.forEach(function(acc){
-    awesome.getBalance.call(acc, {from: acc}).then(function(balance){
-      result += (acc + ": " + balance + "\n");
+    awesome.getBalance.call(acc, {from: acc})
+    .then(function(balance){
+      result += ("<div class='account'>" + acc + ": " + balance + "</div>");
+      return result;
+    })
+    .then(function(result){
       document.getElementById('balances').innerHTML = result;
-      return;
-    }).catch(function(e){
+    })
+    .catch(function(e){
       console.log(e);
       return;
     })

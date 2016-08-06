@@ -3535,3 +3535,55 @@ button {
 /* #### Tablets Portrait #### */
 /* #### Tablets Landscape #### */
 /* #### Desktops #### */
+.margin-bottom {
+  margin-bottom: 40px;
+}
+#balances {
+  background-color: #F7F2F2;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 150%;
+  font-family: "Courier New", Courier, monospace;
+}
+.dapp-tag-button {
+  margin-top: 15px;
+}
+.dapp-tag-button:hover {
+  background-color: #ACA6A6;
+}
+.dapp-block-button {
+  height: 32px;
+  margin: 0 5px;
+}
+.dapp-block-button:hover {
+  background-color: #2A70C2;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.account {
+  min-width: 500px;
+}
+.right {
+  float: right;
+}
+.header-flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.send-container {
+  flex-grow: 2;
+}
+.header-title {
+  flex-grow: 1;
+}
+#to {
+  width: 50%;
+}
+#amount {
+  width: 15%;
+}

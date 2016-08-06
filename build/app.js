@@ -5705,9 +5705,9 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x6060604052600160a060020a03329081166000908152602081905260409020620f4240905560018054600160a060020a031916909117905561030e806100456000396000f3606060405236156100405760e060020a60003504630b40bd8881146100485780631249c58b1461007c578063d5e143f4146100a3578063f8b2cb4f14610175575b610198610002565b610198600435602435604435600160a060020a03831660009081526020819052604081205481908390101561019a57610002565b610198600154600160a060020a031660009081526020819052604090208054612710019055565b61019860015460009033600160a060020a039081169116141561030b575b60025481101561030b576002805460009182918490811015610002577f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace0154600160a060020a0390811683526020839052604080842054600154909216845283208054909101905580548291908590811015610002577f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace0154600160a060020a0316909152505060408120556001016100c1565b600435600160a060020a0316600090815260208181526040909120546060908152f35b005b600160a060020a0384168152604081205483810110156101b957610002565b826000600050600087600160a060020a03168152602001908152602001600020600082828250540392505081905550826000600050600086600160a060020a0316815260200190815260200160002060008282825054019250508190555060019150600090505b6002548110156102885783600160a060020a03166002600050828154811015610002576000919091527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace0154600160a060020a0316141561028057600091505b600101610220565b811561030057600280546001810180835582818380158290116102ce578183600052602060002091820191016102ce91905b8082111561030757600081556001016102ba565b50505091909060005260206000209001600050805473ffffffffffffffffffffffffffffffffffffffff191686179055505b5050505050565b5090565b5056",
-    "updated_at": 1470365399442,
+    "updated_at": 1470437201708,
     "links": {},
-    "address": "0xb70cbd1b0b87fc4c1fcb4292a73584acd3738b48"
+    "address": "0x3f5260ddb95b728b0cd572517e49998d296efadf"
   }
 };
 
@@ -6164,9 +6164,9 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260358060106000396000f36503050000000050606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
-    "updated_at": 1470365399450,
+    "updated_at": 1470437201710,
     "links": {},
-    "address": "0xf3874daf4eec3de34321199fda99e94f4f227d74"
+    "address": "0xbc16c9f74111ec3116e1f0bb3c337a22045805d8"
   }
 };
 
@@ -6661,11 +6661,11 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x6060604052600160a060020a033216600090815260208190526040902061271090556101548061002f6000396000f3606060405260e060020a60003504637bd703e8811461003157806390b98a111461005c578063f8b2cb4f1461008b575b005b6100b1600435600073__ConvertLib____________________________6396e4ee3d6100d784610092565b6100c360043560243533600160a060020a03166000908152602081905260408120548290101561011c5761014e565b6100b16004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b604080519115158252519081900360200190f35b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506100ac9050565b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b9291505056",
-    "updated_at": 1470365399445,
+    "updated_at": 1470437201716,
     "links": {
-      "ConvertLib": "0xf3874daf4eec3de34321199fda99e94f4f227d74"
+      "ConvertLib": "0xbc16c9f74111ec3116e1f0bb3c337a22045805d8"
     },
-    "address": "0x88307c28d3fb221f85187482f6616fa69649be75"
+    "address": "0x359c4b68a91e8595faae1c7e211a7ff29967fa1b"
   }
 };
 
@@ -7153,8 +7153,8 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260008054600160a060020a0319163317905560f7806100236000396000f3606060405260e060020a60003504630900f01081146038578063445df0ac1460b05780638da5cb5b1460b8578063fdacd5761460c9575b005b60366004356000805433600160a060020a039081169116141560ac576001547ffdacd5760000000000000000000000000000000000000000000000000000000060609081526064919091528291600160a060020a0383169163fdacd5769160849160248183876161da5a03f1156002575050505b5050565b60ed60015481565b60ed600054600160a060020a031681565b603660043560005433600160a060020a039081169116141560ea5760018190555b50565b6060908152602090f3",
-    "updated_at": 1470365399454,
-    "address": "0x30f68d906fdd564d3786f3065a4dad096a0a4809",
+    "updated_at": 1470437201713,
+    "address": "0xbb284131dee05698e8fc0feb62c49741812d2adc",
     "links": {}
   }
 };
@@ -7614,8 +7614,8 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260018054600160a060020a0319163317905534600055603d8060266000396000f3606060405260e060020a6000350463403c9fa88114602457806393e84cd9146031575b005b6000546060908152602090f35b6022600080543401905556",
-    "updated_at": 1470365399459,
-    "address": "0x98da0f3aeb7181fe827909f96b3c7088590e9db7",
+    "updated_at": 1470437201719,
+    "address": "0x89c1e8b95b72fe765645ed6547c929eb2cc6317a",
     "links": {}
   }
 };
@@ -8052,6 +8052,18 @@ var Web3 = require("web3");
     "abi": [
       {
         "constant": false,
+        "inputs": [],
+        "name": "getPot",
+        "outputs": [
+          {
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "type": "function"
+      },
+      {
+        "constant": false,
         "inputs": [
           {
             "name": "awesomeAddr",
@@ -8071,10 +8083,10 @@ var Web3 = require("web3");
         "type": "constructor"
       }
     ],
-    "unlinked_binary": "0x606060405260008054600160a060020a0319163217905560a38060226000396000f360606040523615601d5760e060020a600035046347e7ef2481146023575b60a16002565b60a16004356024357f0b40bd880000000000000000000000000000000000000000000000000000000060609081523373ffffffffffffffffffffffffffffffffffffffff908116606490815230821660845260a4849052849291831691630b40bd889160c4916000918183876161da5a03f115600257505050505050565b00",
-    "updated_at": 1470365399461,
+    "unlinked_binary": "0x606060405260008054600160a060020a0319163217905560ba8060226000396000f36060604052361560275760e060020a6000350463403c9fa88114602d57806347e7ef2414603a575b60b86002565b6001546060908152602090f35b60b86004356024357f0b40bd880000000000000000000000000000000000000000000000000000000060609081523373ffffffffffffffffffffffffffffffffffffffff908116606490815230821660845260a4849052849291831691630b40bd889160c4916000918183876161da5a03f115600257505050505050565b00",
+    "updated_at": 1470437201722,
     "links": {},
-    "address": "0xb4502152661bac589123f32aae1e733198e4aba0"
+    "address": "0x56a3a7f53eca4a0a6a612d3d556622e8e7682416"
   }
 };
 
@@ -8545,9 +8557,9 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260008054600160a060020a0319163317905560f0806100236000396000f3606060405260e060020a600035046341c0e1b58114602e5780638da5cb5b146054578063ef690cc0146065575b005b602c60005433600160a060020a039081169116141560ee57600054600160a060020a0316ff5b60e4600054600160a060020a031681565b600060605260c0604052601260809081527f48656c6c6f2066726f6d2054727566666c65000000000000000000000000000060a052602060c0908152601260e081905281906101009060a090808381846000600483f1505081516dffffffffffffffffffffffffffff1916909152505060405161012081900392509050f35b6060908152602090f35b56",
-    "updated_at": 1470365399464,
+    "updated_at": 1470437201725,
     "links": {},
-    "address": "0x01bf64b7a167d985ec6d4e75ce8323d16b22eabc"
+    "address": "0x801b228a6e7fa225ac73ff21c6335ad1bbfaceb0"
   }
 };
 
@@ -45317,15 +45329,15 @@ exports.createContext = Script.createContext = function (context) {
 
 },{"indexof":132}],225:[function(require,module,exports){
 module.exports = {
-  "AwesomeCoin": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/AwesomeCoin.sol.js"),
-  "ConvertLib": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/ConvertLib.sol.js"),
-  "MetaCoin": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/MetaCoin.sol.js"),
-  "Migrations": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/Migrations.sol.js"),
-  "Slot": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/Slot.sol.js"),
-  "SlotMachine": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/SlotMachine.sol.js"),
-  "Test": require("/Users/ericrichardson/codecore/truffle_practice/build/contracts/Test.sol.js"),
+  "AwesomeCoin": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/AwesomeCoin.sol.js"),
+  "ConvertLib": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/ConvertLib.sol.js"),
+  "MetaCoin": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/MetaCoin.sol.js"),
+  "Migrations": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/Migrations.sol.js"),
+  "Slot": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/Slot.sol.js"),
+  "SlotMachine": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/SlotMachine.sol.js"),
+  "Test": require("/Users/ericrichardson/codecore/awesome_coin/build/contracts/Test.sol.js"),
 };
-},{"/Users/ericrichardson/codecore/truffle_practice/build/contracts/AwesomeCoin.sol.js":1,"/Users/ericrichardson/codecore/truffle_practice/build/contracts/ConvertLib.sol.js":2,"/Users/ericrichardson/codecore/truffle_practice/build/contracts/MetaCoin.sol.js":3,"/Users/ericrichardson/codecore/truffle_practice/build/contracts/Migrations.sol.js":4,"/Users/ericrichardson/codecore/truffle_practice/build/contracts/Slot.sol.js":5,"/Users/ericrichardson/codecore/truffle_practice/build/contracts/SlotMachine.sol.js":6,"/Users/ericrichardson/codecore/truffle_practice/build/contracts/Test.sol.js":7}]},{},[225])(225)
+},{"/Users/ericrichardson/codecore/awesome_coin/build/contracts/AwesomeCoin.sol.js":1,"/Users/ericrichardson/codecore/awesome_coin/build/contracts/ConvertLib.sol.js":2,"/Users/ericrichardson/codecore/awesome_coin/build/contracts/MetaCoin.sol.js":3,"/Users/ericrichardson/codecore/awesome_coin/build/contracts/Migrations.sol.js":4,"/Users/ericrichardson/codecore/awesome_coin/build/contracts/Slot.sol.js":5,"/Users/ericrichardson/codecore/awesome_coin/build/contracts/SlotMachine.sol.js":6,"/Users/ericrichardson/codecore/awesome_coin/build/contracts/Test.sol.js":7}]},{},[225])(225)
 });
 
 // Added by Truffle bootstrap.                                
@@ -45379,7 +45391,7 @@ function sendCoin(){
   var awesome = AwesomeCoin.deployed();
   var amount = parseInt(document.getElementById("amount").value);
   var _from = account;
-  var _to = document.getElementById("receiver").value;
+  var _to = document.getElementById("to").value;
 
   awesome.sendCoin(_from, _to, amount, {from: account}).then(function() {
     refreshBalances();
@@ -45412,11 +45424,15 @@ function refreshBalances(){
   var result = "";
 
   accounts.forEach(function(acc){
-    awesome.getBalance.call(acc, {from: acc}).then(function(balance){
-      result += (acc + ": " + balance + "\n");
+    awesome.getBalance.call(acc, {from: acc})
+    .then(function(balance){
+      result += ("<div class='account'>" + acc + ": " + balance + "</div>");
+      return result;
+    })
+    .then(function(result){
       document.getElementById('balances').innerHTML = result;
-      return;
-    }).catch(function(e){
+    })
+    .catch(function(e){
       console.log(e);
       return;
     })

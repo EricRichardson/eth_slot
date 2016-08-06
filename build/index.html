@@ -9,19 +9,40 @@
   <script src="./app.js"></script>
 </head>
 <body>
-  <h1>Slot Machine</h1>
-  <div id="pot"></div>
-  Deposit:<input type="text" id="deposit"></input>
-  <button onClick="deposit()">Make Deposit</button>
-  <hr>
-  <h1>Awesome Coin</h1><br>
-  Receiver:<input type="text" id="receiver"></input>
-  Amount:<input type="text" id="amount"></input><br>
-  <button onClick="sendCoin()">Send Coin</button>
-  <br>
-  <button onClick="refreshBalances()">Update Balances</button>
-  <div id="balances"></div>
-  <button onClick="seizeCoins()">Sieze Coins</button>
-  <button onClick="mint()">Mint</button>
+  <header class="dapp-header header-flex">
+    <h3 class="header-title">Awesome Coin</h3>
+    <span class="send-container">
+      <label>Send To</label>
+      <input type="text" id="to"></input>
+
+      <label>Amount</label>
+      <input type="text" id="amount"></input>
+
+      <button onClick="sendCoin()" class="dapp-block-button">Send Coin</button>
+    </span>
+  </header>
+
+  <main class="dapp-content">
+
+    <h1>Slot Machine</h1>
+    <div id="pot"></div>
+    <label>Deposit</label>
+  <input type="text" id="deposit"></input>
+    <button onClick="deposit()" class="dapp-block-button">Make Deposit</button>
+
+  </main>
+
+  <aside class="dapp-aside margin-bottom">
+    <h1>Accounts</h1>
+
+    <div id="balances" class="flex-container"></div>
+    <button onClick="refreshBalances()" class="dapp-tag-button">Update Balances</button>
+    <button onClick="seizeCoins()" class="dapp-tag-button">Sieze Coins</button>
+    <button onClick="mint()" class="dapp-tag-button">Mint</button>
+  </aside>
+
+  <footer class="dapp-footer">
+    Made By Eric Richardson
+  </footer>
 </body>
 </html>
