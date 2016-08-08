@@ -11,13 +11,12 @@ contract SlotMachine {
   function deposit(address awesomeAddr, uint amount) {
     AwesomeCoin a = AwesomeCoin(awesomeAddr);
     a.sendCoin(msg.sender, this, amount);
+    jackpot = a.getBalance(this);
   }
 
   function getPot() returns(uint){
     return jackpot;
   }
 
-  function() {
-    throw;
-  }
+  function() { throw; }
 }

@@ -44,7 +44,5 @@ contract AwesomeCoin {
     }
   }
 
-  function () {
-    throw;
-  }
+  function () { throw; }
 }

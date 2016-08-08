@@ -61,9 +61,6 @@ function refreshBalances(){
   });
 }
 
-
-
-
 function deposit() {
   var slot = SlotMachine.deployed();
   var awesome = AwesomeCoin.deployed();
@@ -72,12 +69,14 @@ function deposit() {
   console.log(awesome.address);
 
   slot.deposit(addr, amount, {from: account});
+  getPot();
 }
 
 function getPot(){
   var slot = SlotMachine.deployed();
-  var pot = slot.getPot();
-  document.getElementById("pot").innerHTML = pot;
+  slot.getPot.call({from: account}).then(function(pot){
+    document.getElementById("pot").innerHTML = pot;
+  });
 }
 
 
@@ -96,5 +95,6 @@ window.onload = function() {
     accounts = accs;
     account = accounts[0];
     refreshBalances();
+    getPot();
   });
 }

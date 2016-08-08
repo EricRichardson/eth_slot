@@ -1,3 +1,3 @@
-module.exports = function(deployer) {
-  deployer.deploy(Slot);
-};
+module.exports = function(deployer){
+  deployer.deploy(SlotMachine);
+}
