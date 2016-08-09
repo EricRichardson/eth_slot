@@ -3537,6 +3537,17 @@ button {
 /* #### Tablets Portrait #### */
 /* #### Tablets Landscape #### */
 /* #### Desktops #### */
+#odds {
+  background-color: #AEEEEE;
+}
+.hide {
+  display: none;
+}
+th,
+td {
+  border: 1px solid black;
+  text-align: center;
+}
 .margin-bottom {
   margin-bottom: 40px;
 }

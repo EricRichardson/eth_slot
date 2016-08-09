@@ -12,8 +12,10 @@ function getGreeting() {
 function sendCoin(){
   var awesome = AwesomeCoin.deployed();
   var amount = parseInt(document.getElementById("amount").value);
+  document.getElementById("amount").value = '';
   var _from = account;
   var _to = document.getElementById("to").value;
+  document.getElementById("to").value = '';
 
   awesome.sendCoin(_from, _to, amount, {from: account}).then(function() {
     refreshBalances();
@@ -66,10 +68,12 @@ function deposit() {
   var awesome = AwesomeCoin.deployed();
   var addr = String(awesome.address);
   var amount = parseInt(document.getElementById("deposit").value);
+  document.getElementById("deposit").value = '';
   console.log(awesome.address);
 
   slot.deposit(addr, amount, {from: account});
   getPot();
+  refreshBalances();
 }
 
 function getPot(){
@@ -79,6 +83,24 @@ function getPot(){
   });
 }
 
+function result(){
+  var slot = SlotMachine.deployed();
+  slot.result.call({from: account}).then(function(result){
+    document.getElementById("result").innerHTML = result;
+  })
+}
+
+function toggleOdds() {
+  var table = document.getElementById("odds");
+  var button = document.getElementById("toggleOdds")
+  if ( table.className.match(/(?:^|\s)hide(?!\S)/)) {
+    table.className = table.className.replace(/(?:^|\s)hide(?!\S)/g , '');
+    button.innerHTML = "Hide Odds"
+  } else {
+    table.className += "hide";
+    button.innerHTML = "Show Odds"
+  }
+}
 
 window.onload = function() {
   web3.eth.getAccounts(function(err, accs) {

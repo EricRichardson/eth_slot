@@ -23,13 +23,64 @@
   <main class="dapp-content">
 
     <h1>Slot Machine</h1>
+    <div id="result"></div>
+    <button onClick="result()" class="dapp-block-button">See Result</button>
     <div id="jack-pot">
       <h3>Current Jack Pot</h3>
       <div id="pot"></div>
     </div>
+
+
     <label>Deposit</label>
   <input type="text" id="deposit"></input>
     <button onClick="deposit()" class="dapp-block-button">Make Deposit</button>
+    <button onClick="toggleOdds()" class="dapp-primary-button" id="toggleOdds">Show Odds</button>
+    <table id="odds" class="hide">
+      <tr>
+        <th>Probability</th>
+        <th>Prize</th>
+      </tr>
+      <tr>
+        <td>0.000025</td>
+        <td>800</td>
+      </tr>
+      <tr>
+        <td>0.000109</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>0.002363</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>0.011512</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>0.011015</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>0.011229</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>0.074449</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>0.129279</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>0.214585</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0.545435</td>
+        <td>0</td>
+      </tr>
+    </table>
 
   </main>
 
@@ -44,6 +95,7 @@
 
   <footer class="dapp-footer">
     Made By Eric Richardson
+
   </footer>
 </body>
 </html>
