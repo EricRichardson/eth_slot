@@ -4,13 +4,17 @@ contract SlotMachine {
   address owner;
   AwesomeCoin awesomeCoin;
   uint jackpot;
+  string result;
 
   function SlotMachine(){
     owner = tx.origin;
   }
 
-  function deposit(address awesomeAddr, uint amount) {
+  function addCoinAddr(address awesomeAddr){
     awesomeCoin = AwesomeCoin(awesomeAddr);
+  }
+
+  function deposit(uint amount) {
     awesomeCoin.sendCoin(msg.sender, this, amount);
     jackpot = awesomeCoin.getBalance(this);
   }
@@ -19,33 +23,46 @@ contract SlotMachine {
     return jackpot;
   }
 
-  function result() returns(uint){
+  function play(){
     uint randNum = uint(sha256(now)) % 1000000;
     if(randNum < 25) {
-      /*800 times*/
+      result = "Royal Flush";
+      payOut(800);
     } else if (randNum < 134) {
-      /*50*/
+      result = "Straight Flush";
+      payOut(50);
     } else if (randNum < 2497) {
-      /*25*/
+      result = "Four of a Kind";
+      payOut(25);
     } else if (randNum < 14009) {
-      /*9*/
+      result = "Full House";
+      payOut(9);
     } else if (randNum < 25024) {
-      /*6*/
+      result = "Flush";
+      payOut(6);
     } else if (randNum < 36253) {
-      /*4*/
+      result = "Straight";
+      payOut(4);
     } else if (randNum < 110702) {
-      /*3*/
+      result = "Three of a Kind";
+      payOut(3);
     } else if (randNum < 239981) {
-      /*2*/
+      result = "Two Pair";
+      payOut(2);
     } else if (randNum < 454566) {
-      /*1*/
+      result = "Jacks or Better";
     } else {
-      /*0*/
+      result = "You lost";
+      deposit(1);
     }
   }
 
-  function payOut(address _to, uint amount) {
+  function getResult() returns(string){
+    return result;
+  }
 
+  function payOut(uint amount) {
+    awesomeCoin.sendCoin(this, tx.origin, amount);
   }
 
   function() { throw; }

@@ -2,12 +2,10 @@ var accounts;
 var account;
 var balance;
 
-function getGreeting() {
-  var test = Test.deployed();
-  test.greeting().then(function(value){
-    alert(value);
-  });
-}
+var royalFlush = new Image();
+royalFlush.src = 'images/royal_flush.png';
+
+// Awesome Coin
 
 function sendCoin(){
   var awesome = AwesomeCoin.deployed();
@@ -17,23 +15,14 @@ function sendCoin(){
   var _to = document.getElementById("to").value;
   document.getElementById("to").value = '';
 
-  awesome.sendCoin(_from, _to, amount, {from: account}).then(function() {
-    refreshBalances();
-    return;
-  }).catch(function(e){
-    console.log(e);
-    return;
-  })
+  awesome.sendCoin(_from, _to, amount, {from: account});
+  refreshBalances();
 }
 
 function mint(){
   var awesome = AwesomeCoin.deployed();
-  awesome.mint({from: account}).then(function(response){
-    console.log("Coins minted", response);
-    return refreshBalances();
-  }).catch(function(e){
-    console.log(e);
-  })
+  awesome.mint({from: account});
+  refreshBalances();
 }
 
 function seizeCoins(){
@@ -63,15 +52,14 @@ function refreshBalances(){
   });
 }
 
+// Slot Machine
+
 function deposit() {
   var slot = SlotMachine.deployed();
-  var awesome = AwesomeCoin.deployed();
-  var addr = String(awesome.address);
   var amount = parseInt(document.getElementById("deposit").value);
   document.getElementById("deposit").value = '';
-  console.log(awesome.address);
 
-  slot.deposit(addr, amount, {from: account});
+  slot.deposit(amount, {from: account});
   getPot();
   refreshBalances();
 }
@@ -83,23 +71,49 @@ function getPot(){
   });
 }
 
-function result(){
+function play(){
   var slot = SlotMachine.deployed();
-  slot.result.call({from: account}).then(function(result){
+  slot.play({from: account});
+  slot.getResult.call({from: account}).then(function(result){
     document.getElementById("result").innerHTML = result;
+    displayHand(result);
   })
+  refreshBalances();
+  getPot();
+  displayHand();
 }
 
-function toggleOdds() {
-  var table = document.getElementById("odds");
-  var button = document.getElementById("toggleOdds")
-  if ( table.className.match(/(?:^|\s)hide(?!\S)/)) {
-    table.className = table.className.replace(/(?:^|\s)hide(?!\S)/g , '');
-    button.innerHTML = "Hide Odds"
+function displayHand(hand){
+  if (hand == "Royal Flush") {
+    var src = "images/royal_flush.png";
+  } else if (hand == "Straight Flush") {
+    var src = "images/straight_flush.png";
+  } else if (hand == "Four of a Kind") {
+    var src = "images/four_kind.png";
+  } else if (hand == "Full House") {
+    var src = "images/full_house.png";
+  } else if (hand == "Flush") {
+    var src = "images/flush.png";
+  } else if (hand == "Straight") {
+    var src = "images/straight.png";
+  } else if (hand == "Three of a Kind") {
+    var src = "images/three_kind.png";
+  } else if (hand == "Two Pair") {
+    var src = "images/two_pair.png";
+  } else if (hand == "Jacks or Better") {
+    var src = "images/pair.png";
   } else {
-    table.className += "hide";
-    button.innerHTML = "Show Odds"
+    var src = "images/nothing.png";
   }
+  
+  document.getElementById("hand").innerHTML = '<img src="' + src + '"/>';
+}
+
+function initializeSlot(){
+  var awesome = AwesomeCoin.deployed();
+  var slot = SlotMachine.deployed();
+  slot.addCoinAddr(awesome.address, {from: account});
+  console.log("Coin address set at: " + awesome.address);
 }
 
 window.onload = function() {
@@ -116,7 +130,21 @@ window.onload = function() {
 
     accounts = accs;
     account = accounts[0];
+    initializeSlot();
     refreshBalances();
     getPot();
   });
+}
+
+
+function toggleOdds() {
+  var table = document.getElementById("odds");
+  var button = document.getElementById("toggleOdds")
+  if ( table.className.match(/(?:^|\s)hide(?!\S)/)) {
+    table.className = table.className.replace(/(?:^|\s)hide(?!\S)/g , '');
+    button.innerHTML = "Hide Odds";
+  } else {
+    table.className += "hide";
+    button.innerHTML = "Show Odds";
+  }
 }
