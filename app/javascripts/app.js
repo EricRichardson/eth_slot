@@ -1,6 +1,7 @@
 var accounts;
 var account;
 var balance;
+var pot;
 
 var royalFlush = new Image();
 royalFlush.src = 'images/royal_flush.png';
@@ -66,7 +67,8 @@ function deposit() {
 
 function getPot(){
   var slot = SlotMachine.deployed();
-  slot.getPot.call({from: account}).then(function(pot){
+  slot.getPot.call({from: account}).then(function(current_pot){
+    pot = current_pot;
     document.getElementById("pot").innerHTML = pot;
   });
 }
@@ -81,10 +83,10 @@ function play(){
   })
   refreshBalances();
   getPot();
-  displayHand();
 }
 
 function displayHand(hand){
+  var wager = document.querySelector('input[name="wager"]:checked').value;
   if (hand == "Royal Flush") {
     var src = "images/royal_flush.png";
   } else if (hand == "Straight Flush") {
@@ -136,7 +138,6 @@ window.onload = function() {
     getPot();
   });
 }
-
 
 function toggleOdds() {
   var table = document.getElementById("odds");

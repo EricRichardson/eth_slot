@@ -3,7 +3,6 @@ import "AwesomeCoin.sol";
 contract SlotMachine {
   address owner;
   AwesomeCoin awesomeCoin;
-  uint pot;
   string result;
 
   function SlotMachine(){
@@ -16,11 +15,10 @@ contract SlotMachine {
 
   function deposit(uint amount) {
     awesomeCoin.sendCoin(msg.sender, this, amount);
-    pot = awesomeCoin.getBalance(this);
   }
 
   function getPot() returns(uint){
-    return pot;
+    return awesomeCoin.getBalance(this);
   }
 
   function play(uint wager){
