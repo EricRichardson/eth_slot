@@ -73,7 +73,8 @@ function getPot(){
 
 function play(){
   var slot = SlotMachine.deployed();
-  slot.play({from: account});
+  var wager = document.querySelector('input[name="wager"]:checked').value;
+  slot.play(wager, {from: account});
   slot.getResult.call({from: account}).then(function(result){
     document.getElementById("result").innerHTML = result;
     displayHand(result);
@@ -105,7 +106,7 @@ function displayHand(hand){
   } else {
     var src = "images/nothing.png";
   }
-  
+
   document.getElementById("hand").innerHTML = '<img src="' + src + '"/>';
 }
 

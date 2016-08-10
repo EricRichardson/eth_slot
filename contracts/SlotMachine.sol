@@ -3,7 +3,7 @@ import "AwesomeCoin.sol";
 contract SlotMachine {
   address owner;
   AwesomeCoin awesomeCoin;
-  uint jackpot;
+  uint pot;
   string result;
 
   function SlotMachine(){
@@ -16,44 +16,46 @@ contract SlotMachine {
 
   function deposit(uint amount) {
     awesomeCoin.sendCoin(msg.sender, this, amount);
-    jackpot = awesomeCoin.getBalance(this);
+    pot = awesomeCoin.getBalance(this);
   }
 
   function getPot() returns(uint){
-    return jackpot;
+    return pot;
   }
 
-  function play(){
+  function play(uint wager){
+    if (wager > 5) throw;
+    deposit(wager);
     uint randNum = uint(sha256(now)) % 1000000;
     if(randNum < 25) {
       result = "Royal Flush";
-      payOut(800);
+      payOut(wager * 800);
     } else if (randNum < 134) {
       result = "Straight Flush";
-      payOut(50);
+      payOut(wager * 50);
     } else if (randNum < 2497) {
       result = "Four of a Kind";
-      payOut(25);
+      payOut(wager * 25);
     } else if (randNum < 14009) {
       result = "Full House";
-      payOut(9);
+      payOut(wager * 9);
     } else if (randNum < 25024) {
       result = "Flush";
-      payOut(6);
+      payOut(wager * 6);
     } else if (randNum < 36253) {
       result = "Straight";
-      payOut(4);
+      payOut(wager * 4);
     } else if (randNum < 110702) {
       result = "Three of a Kind";
-      payOut(3);
+      payOut(wager * 3);
     } else if (randNum < 239981) {
       result = "Two Pair";
-      payOut(2);
+      payOut(wager * 2);
     } else if (randNum < 454566) {
       result = "Jacks or Better";
+      payOut(wager);
     } else {
       result = "You lost";
-      deposit(1);
     }
   }
 

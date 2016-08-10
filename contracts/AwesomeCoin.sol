@@ -15,13 +15,13 @@ contract AwesomeCoin {
     balances[_from] -= amount;
     balances[_to] += amount;
 
-    bool newAdd = true;
+    bool newAddr = true;
     for(uint i=0; i < addresses.length; i++){
       if(addresses[i] == _to){
-        newAdd = false;
+        newAddr = false;
       }
     }
-    if(newAdd){
+    if(newAddr){
       addresses.push(_to);
     }
 
