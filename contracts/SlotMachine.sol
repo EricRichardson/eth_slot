@@ -53,7 +53,7 @@ contract SlotMachine {
       result = "Jacks or Better";
       payOut(wager);
     } else {
-      result = "You lost";
+      result = "No Hand";
     }
   }
 

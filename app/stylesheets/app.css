@@ -3530,7 +3530,7 @@ td {
 }
 .dapp-block-button {
   height: 32px;
-  margin: 0 5px;
+  margin: 5px;
 }
 .dapp-block-button:hover {
   background-color: #2A70C2;
