@@ -6,7 +6,7 @@
   <title>Eth Slots</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href="./app.css" rel='stylesheet' type='text/css'>
-  <script src="./app.js"></script>
+
 </head>
 <body>
   <header class="dapp-header header-flex">
@@ -38,6 +38,11 @@
       <input name="wager" type="radio" value="4"> 4
       <input name="wager" type="radio" value="5"> 5
     </form>
+    <div id="warning" class="hide">
+      <div class="warning">
+        WARNING: The machine does not have enough funds to pay out all prizes in full.<br> Try a lower wager.
+      </div>
+    </div>
     <div id="jack-pot">
       <h3>Awesome Coins in the Machine</h3>
       <div id="pot"></div>
@@ -121,5 +126,6 @@
   <footer class="dapp-footer">
     Made By Eric Richardson
   </footer>
+  <script src="./app.js"></script>
 </body>
 </html>

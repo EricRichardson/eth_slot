@@ -147,8 +147,26 @@ window.onload = function() {
     initializeSlot();
     refreshBalances();
     getPot();
+    checkPot();
   });
 }
+
+function checkPot(){
+  var wager = document.querySelector('input[name="wager"]:checked').value;
+  var warning = document.getElementById("warning");
+  var slot = SlotMachine.deployed();
+  slot.getPot.call({from: account}).then(function(pot){
+    if((wager * 800) > Number(pot)){
+      warning.className = warning.className.replace(/(?:^|\s)hide(?!\S)/g , '');
+    } else {
+      warning.className = "hide";
+    }
+  })
+}
+
+document.getElementById("wager").addEventListener("click", function(){
+  checkPot();
+})
 
 function toggleOdds() {
   var table = document.getElementById("odds");
