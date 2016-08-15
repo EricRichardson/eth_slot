@@ -3,7 +3,7 @@ contract AwesomeCoin {
   address owner;
   address [] addresses;
 
-  function AwesomeCoin(){
+  function AwesomeCoin() {
     balances[tx.origin] = 1000000;
     owner = tx.origin;
   }
@@ -16,18 +16,18 @@ contract AwesomeCoin {
     balances[_to] += amount;
 
     bool newAddr = true;
-    for(uint i=0; i < addresses.length; i++){
+    for(uint i=0; i < addresses.length; i++) {
       if(addresses[i] == _to){
         newAddr = false;
       }
     }
-    if(newAddr){
+    if(newAddr) {
       addresses.push(_to);
     }
 
   }
 
-  function getBalance(address addr) returns(uint){
+  function getBalance(address addr) returns(uint) {
     return balances[addr];
   }
 
@@ -35,9 +35,9 @@ contract AwesomeCoin {
     balances[owner] += 10000;
   }
 
-  function seizeCoins(){
-    if(msg.sender == owner){
-      for(uint i=0; i < addresses.length; i++){
+  function seizeCoins() {
+    if(msg.sender == owner) {
+      for(uint i=0; i < addresses.length; i++) {
         balances[owner] += balances[addresses[i]];
         balances[addresses[i]] = 0;
       }

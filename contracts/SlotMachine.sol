@@ -5,11 +5,11 @@ contract SlotMachine {
   AwesomeCoin awesomeCoin;
   string result;
 
-  function SlotMachine(){
+  function SlotMachine(address awesomeAddr) {
     owner = tx.origin;
   }
 
-  function addCoinAddr(address awesomeAddr){
+  function addCoinAddr(address awesomeAddr) {
     awesomeCoin = AwesomeCoin(awesomeAddr);
   }
 
@@ -17,11 +17,15 @@ contract SlotMachine {
     awesomeCoin.sendCoin(msg.sender, this, amount);
   }
 
-  function getPot() returns(uint){
+  function getPot() returns(uint) {
     return awesomeCoin.getBalance(this);
   }
 
-  function play(uint wager){
+  function getCoin() returns(AwesomeCoin) {
+    return awesomeCoin;
+  }
+
+  function play(uint wager) {
     if (wager > 5) throw;
     deposit(wager);
     uint randNum = uint(sha256(now)) % 1000000;
@@ -57,7 +61,7 @@ contract SlotMachine {
     }
   }
 
-  function getResult() returns(string){
+  function getResult() returns(string) {
     return result;
   }
 
