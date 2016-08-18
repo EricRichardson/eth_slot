@@ -1,4 +1,5 @@
 contract('AwesomeCoin', function(accounts) {
+  var AMOUNT = 1000;
 
   it("should initialize the first account with 1000000", function() {
     var awesome = AwesomeCoin.deployed();
@@ -19,14 +20,12 @@ contract('AwesomeCoin', function(accounts) {
     var acc_one_end;
     var acc_two_end;
 
-    var amount = 100;
-
     return awesome.getBalance.call(acc_one).then(function(balance){
       acc_one_start = balance.toNumber();
       return awesome.getBalance.call(acc_two);
     }).then(function(balance) {
       acc_two_start = balance.toNumber();
-      return awesome.sendCoin(acc_one, acc_two, amount, {from: acc_one});
+      return awesome.sendCoin(acc_one, acc_two, AMOUNT);
     }).then(function() {
       return awesome.getBalance.call(acc_one);
     }).then(function(balance) {
@@ -35,8 +34,8 @@ contract('AwesomeCoin', function(accounts) {
     }).then(function(balance) {
       acc_two_end = balance.toNumber();
 
-      assert.equal(acc_one_end, acc_one_start - amount, "Amount wasn't taken from the sender");
-      assert.equal(acc_two_end, acc_two_start + amount, "Amount wasn't given to the receiver");
+      assert.equal(acc_one_end, acc_one_start - AMOUNT, "Amount wasn't taken from the sender");
+      assert.equal(acc_two_end, acc_two_start + AMOUNT, "Amount wasn't given to the receiver");
     })
   });
 
@@ -89,4 +88,6 @@ contract('AwesomeCoin', function(accounts) {
       })
     })
   });
+
+
 });

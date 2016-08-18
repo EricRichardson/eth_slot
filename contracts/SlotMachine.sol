@@ -5,7 +5,7 @@ contract SlotMachine {
   AwesomeCoin awesomeCoin;
   string result;
 
-  function SlotMachine(address awesomeAddr) {
+  function SlotMachine() {
     owner = tx.origin;
   }
 
